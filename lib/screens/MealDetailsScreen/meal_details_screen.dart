@@ -12,9 +12,13 @@ import '../../widgets/background.dart';
 import 'widgets/bottom_sheet_info.dart';
 
 class MealDetailsScreen extends StatefulWidget {
-  MealDetailsScreen({super.key});
+  final Future<Meal> Function(String) futuremealfunction;
+  final String param;
+  MealDetailsScreen(
+      {super.key, required this.futuremealfunction, required this.param});
 
   @override
+  // ignore: no_logic_in_create_state
   State<MealDetailsScreen> createState() => _MealDetailsScreenState();
 }
 
@@ -24,7 +28,7 @@ class _MealDetailsScreenState extends State<MealDetailsScreen> {
   @override
   void initState() {
     super.initState();
-    futuremeal = FoodApiService().getRandomMeal();
+    futuremeal = widget.futuremealfunction(widget.param);
   }
 
   late Meal meal;

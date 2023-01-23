@@ -41,6 +41,7 @@ class Meal {
         meas.add(jsonmeal['strMeasure$i']);
       }
     }
+
     return Meal(
         id: jsonmeal['idMeal'],
         title: jsonmeal['strMeal'],

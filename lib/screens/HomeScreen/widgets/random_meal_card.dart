@@ -1,3 +1,4 @@
+import 'package:cheffy/food_api_service.dart';
 import 'package:cheffy/screens/MealDetailsScreen/meal_details_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class RandomMealCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Card(
           child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -27,7 +28,10 @@ class RandomMealCard extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return MealDetailsScreen();
+                          return MealDetailsScreen(
+                            futuremealfunction: FoodApiService().getRandomMeal,
+                            param: "",
+                          );
                         }));
                       },
                       child: const Text("Try Your luck!"))
