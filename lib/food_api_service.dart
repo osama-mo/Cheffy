@@ -78,4 +78,24 @@ class FoodApiService with ChangeNotifier {
       throw Exception('Failed to load Meals');
     }
   }
+
+  Future<List<Meal>> getSearchResults(String serachTerm) async {
+    final queryParameters = {
+      's': serachTerm,
+    };
+    Uri url = Uri.https(
+        "www.themealdb.com", "/api/json/v1/1/search.php", queryParameters);
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+
+      return FoodApiFunc().listfromJson(jsonDecode(response.body));
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load Meals');
+    }
+  }
 }

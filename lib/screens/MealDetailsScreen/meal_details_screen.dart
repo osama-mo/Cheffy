@@ -61,6 +61,26 @@ class _MealDetailsScreenState extends State<MealDetailsScreen> {
                               child: Image.network(
                                 meal.img,
                                 fit: BoxFit.cover,
+                                loadingBuilder: (BuildContext context,
+                                    Widget child,
+                                    ImageChunkEvent? loadingProgress) {
+                                  if (loadingProgress == null) return child;
+                                  return Padding(
+                                    padding: const EdgeInsets.all(32.0),
+                                    child: Center(
+                                      child: CircularProgressIndicator(
+                                        value: loadingProgress
+                                                    .expectedTotalBytes !=
+                                                null
+                                            ? loadingProgress
+                                                    .cumulativeBytesLoaded /
+                                                loadingProgress
+                                                    .expectedTotalBytes!
+                                            : null,
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                             SafeArea(

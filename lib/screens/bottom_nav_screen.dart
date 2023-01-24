@@ -27,7 +27,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         case 0:
           return const HomeScreen();
         case 1:
-          return const SearchScreen();
+          return SearchScreen();
         case 2:
           return const FavoritesScreen();
         case 3:
