@@ -28,9 +28,10 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           MealsRowList(
+            type: "Area",
             header: "Check out Some Egyptian food",
-            param: "Egyptian",
-            futuremealsfunction: FoodApiService().getAreaFood,
+            title: "Egyptian",
+            futuremealsfunction: FoodApiService().getcategoryFood,
           ),
           const Padding(
             padding: EdgeInsets.all(16.0),
@@ -40,9 +41,10 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           MealsRowList(
+            type: "Ingredients",
             header: "Check out Some Egyptian food",
-            param: "chicken_breast",
-            futuremealsfunction: FoodApiService().getMainIngFood,
+            title: "chicken_breast",
+            futuremealsfunction: FoodApiService().getcategoryFood,
           ),
           const Padding(
             padding: EdgeInsets.all(16.0),
@@ -52,9 +54,10 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           MealsRowList(
+            type: "Area",
             header: "Take a look at these Indian Recpies!",
-            param: "Indian",
-            futuremealsfunction: FoodApiService().getAreaFood,
+            title: "Indian",
+            futuremealsfunction: FoodApiService().getcategoryFood,
           ),
           const Padding(
             padding: EdgeInsets.all(16.0),
@@ -65,8 +68,9 @@ class HomeScreen extends StatelessWidget {
           ),
           MealsRowList(
             header: "Check out Some Egyptian food",
-            param: "Rice",
-            futuremealsfunction: FoodApiService().getMainIngFood,
+            type: "Ingredients",
+            title: "Rice",
+            futuremealsfunction: FoodApiService().getcategoryFood,
           )
         ],
       ),

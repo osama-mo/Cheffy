@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 
 import '../../../food_api_service.dart';
 import '../../MealDetailsScreen/widgets/meal_class.dart';
+import '../categories_list.dart';
 
-class SearchItem extends StatelessWidget {
-  final Meal meal;
-  const SearchItem({super.key, required this.meal});
+class CategoryItem extends StatelessWidget {
+  final String title;
+  final String imgUrl;
+  const CategoryItem({super.key, required this.title, required this.imgUrl});
 
   // This widget is the root of your application.
   @override
@@ -16,9 +18,8 @@ class SearchItem extends StatelessWidget {
     return TextButton(
       onPressed: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return MealDetailsScreen(
-            futuremealfunction: FoodApiService().getMealDetails,
-            param: meal.id,
+          return CategoriesList(
+            title: title,
           );
         }));
       },
@@ -38,7 +39,7 @@ class SearchItem extends StatelessWidget {
                 Radius.circular(15),
               ),
               child: Image.network(
-                meal.img,
+                imgUrl,
                 height: 150,
                 fit: BoxFit.cover,
                 loadingBuilder: (BuildContext context, Widget child,
@@ -66,45 +67,8 @@ class SearchItem extends StatelessWidget {
                   Center(
                     child: Text(
                       textAlign: TextAlign.center,
-                      meal.title,
-                      style: const TextStyle(fontSize: 30, color: Colors.white),
-                    ),
-                  ),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8.0, horizontal: 16.0),
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.category,
-                            color: Colors.white,
-                          ),
-                          Text(
-                            "  Category: ${meal.category}",
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                                color: Colors.white, fontSize: 15),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 16.0),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.map,
-                          color: Colors.white,
-                        ),
-                        Text(
-                          "  Area: ${meal.area}",
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 15),
-                        )
-                      ],
+                      title,
+                      style: const TextStyle(fontSize: 35, color: Colors.white),
                     ),
                   ),
                 ],

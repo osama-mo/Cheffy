@@ -1,3 +1,5 @@
+import 'package:cheffy/screens/CategoryScreen/categories_list.dart';
+import 'package:cheffy/screens/MealDetailsScreen/widgets/category_class.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../screens/MealDetailsScreen/widgets/meal_class.dart';
@@ -41,6 +43,28 @@ class FoodApiFunc with ChangeNotifier {
           ytLink: jsonmeal['strYoutube'],
           img: jsonmeal['strMealThumb']));
       indexo++;
+    }
+
+    return meals;
+  }
+
+  List<Category> catlistfromJson(Map<String, dynamic> json, String type) {
+    List<Category> meals = [];
+    // ignore: prefer_typing_uninitialized_variables
+    String titleo;
+
+    for (var jsonmeal in json['meals']) {
+      if (type == "Ingredients") {
+        titleo = jsonmeal['strIngredient'];
+      } else if (type == "Area") {
+        titleo = jsonmeal['strArea'];
+      } else {
+        titleo = jsonmeal['strCategory'];
+      }
+      meals.add(Category(
+        id: jsonmeal['idIngredient'],
+        title: titleo,
+      ));
     }
 
     return meals;

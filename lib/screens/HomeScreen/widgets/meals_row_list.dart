@@ -7,14 +7,16 @@ import 'package:flutter/material.dart';
 import '../../MealDetailsScreen/widgets/meal_class.dart';
 
 class MealsRowList extends StatefulWidget {
-  final Future<List<Meal>> Function(String) futuremealsfunction;
+  final Future<List<Meal>> Function(String, String) futuremealsfunction;
   final String header;
-  final String param;
+  final String type;
+  final String title;
   const MealsRowList(
       {super.key,
       required this.futuremealsfunction,
       required this.header,
-      required this.param});
+      required this.type,
+      required this.title});
 
   @override
   State<MealsRowList> createState() => _MealsRowListState();
@@ -26,7 +28,7 @@ class _MealsRowListState extends State<MealsRowList> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    futuremeals = widget.futuremealsfunction(widget.param);
+    futuremeals = widget.futuremealsfunction(widget.title, widget.type);
   }
 
   late List<Meal> meals;

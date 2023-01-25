@@ -3,7 +3,7 @@ import 'package:cheffy/screens/SettingsScreen/settings_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'FavoritesScreen/favorites_screen.dart';
+import 'CategoryScreen/category_screen.dart';
 import 'HomeScreen/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -29,7 +29,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         case 1:
           return SearchScreen();
         case 2:
-          return const FavoritesScreen();
+          return const CategoryScreen();
         case 3:
           return const SettingsScreen();
         default:
@@ -75,13 +75,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.favorite_border_outlined,
+              Icons.category_outlined,
               color: Colors.white,
             ),
             backgroundColor: Color.fromARGB(255, 44, 44, 44),
-            label: 'Favorites',
+            label: 'Categories',
             activeIcon: Icon(
-              CupertinoIcons.heart_solid,
+              Icons.category,
               color: Colors.white,
             ),
           ),
