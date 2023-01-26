@@ -1,5 +1,5 @@
 import 'package:cheffy/screens/SearchScreen/search_screen.dart';
-import 'package:cheffy/screens/SettingsScreen/settings_screen.dart';
+import 'package:cheffy/screens/InfoScreen/info_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +31,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         case 2:
           return const CategoryScreen();
         case 3:
-          return const SettingsScreen();
+          return const InfoScreen();
         default:
           return Container();
       }
@@ -87,13 +87,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.settings_applications_rounded,
+              Icons.info_outline,
               color: Colors.white,
             ),
             backgroundColor: Color.fromARGB(255, 44, 44, 44),
-            label: 'Settings',
+            label: 'Info',
             activeIcon: Icon(
-              Icons.settings_applications_outlined,
+              Icons.info,
               color: Colors.white,
             ),
           ),
