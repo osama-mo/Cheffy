@@ -40,6 +40,7 @@ class CategoryItem extends StatelessWidget {
               ),
               child: Image.network(
                 imgUrl,
+                color: Colors.white,
                 height: 150,
                 fit: BoxFit.cover,
                 loadingBuilder: (BuildContext context, Widget child,

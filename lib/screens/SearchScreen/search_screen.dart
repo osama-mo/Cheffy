@@ -41,6 +41,7 @@ class _SearchScreenState extends State<SearchScreen> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 44, 44, 44),
         title: TextField(
+          style: TextStyle(color: Colors.white),
           controller: _searchController,
           decoration: InputDecoration(
             hintText: 'Search...',
