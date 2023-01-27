@@ -10,7 +10,7 @@
 - Flutter widgets (stateless and stateful) and styling.
 
 ## Features
-- getting random meal you want to try your luck :wink:.
+- getting a random meal if you want to try your luck :wink:.
 - Simple and Catchy UI :heart_eyes:.
 - Search for whatever meal you want :mag:.
 - Filtter By (Area,Category,Ingredients) :open_mouth: .
