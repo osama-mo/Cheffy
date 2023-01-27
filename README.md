@@ -1,6 +1,6 @@
 # Cheffy
 
-***Cheffy*** :spaghetti: provides recipes and other useful information for some of the popular delicious dishes. You can Search for whatever Recipe comes to your mind and also filter out recipes according to diffrent aspects!.
+***Cheffy*** :spaghetti: provides recipes and other useful information for Many delicious dishes!. You can Search for whatever Recipe comes to your mind and also filter out recipes according to diffrent aspects!.
 
 ### Flutter Concepts:
 
